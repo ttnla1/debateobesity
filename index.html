@@ -1,14 +1,6 @@
 <!doctype html>
 <html lang="en" class="h-full">
 <head>
-  <div class="max-w-lg mx-auto px-4 py-3">
-  <p class="text-xs text-slate-600 italic text-center bg-white/70 rounded-xl p-3 shadow-sm">
-    We do not claim that the environment determines obesity in 100% of cases.
-    However, the environment significantly increases the probability of obesity
-    at the societal level.
-  </p>
-</div>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Topics - Group 3</title>
@@ -242,36 +234,11 @@ function showPage(page){
   contentTitle.innerText=d.title;
   contentSubtitle.innerText=d.subtitle;
 
-  contentImages.innerHTML = '';
-
-d.images.forEach((img, index) => {
-
-  if (currentPage === 'stress') {
-
-    const stressNotes = [
-      'Stress from academic and work pressure contributes to unhealthy eating behaviors.',
-      'Chronic stress increases the consumption of high-sugar and high-fat foods.',
-      'Stress-related lifestyles reduce physical activity and disrupt healthy routines.'
-    ];
-
-    contentImages.innerHTML += `
-      <div class="bg-white rounded-xl shadow overflow-hidden">
-        <img src="${img}" class="w-full h-48 object-cover">
-        <p class="text-xs text-slate-600 p-2 text-center">
-          ${stressNotes[index] || ''}
-        </p>
-      </div>
-    `;
-
-  } else {
-
-    contentImages.innerHTML += `
-      <img src="${img}" class="rounded-xl shadow-md w-full object-cover">
-    `;
-
-  }
-
-});
+  contentImages.innerHTML='';
+  d.images.forEach(i=>{
+    contentImages.innerHTML+=`<img src="${i}" class="rounded-xl shadow-md w-full object-cover">`;
+  });
+}
 
 backBtn.onclick=()=>{
   homePage.classList.remove('hidden');
@@ -284,7 +251,4 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
-
-
-
 
