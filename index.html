@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-  <meta charset="UTF-8" />
-  <title>Obesity Caused by Environment</title>
+  <meta charset="UTF-8">
+  <title>Obesity Topic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body class="h-full bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
 
 <!-- HEADER -->
-<header class="bg-white shadow-sm p-4 text-center">
-  <h1 class="text-2xl font-bold">Obesity Topic.</h1>
-  <p class="text-slate-500">Group 3 – Debate | Project 6: Obesity - Environment</p>
+<header class="bg-white/80 backdrop-blur-md px-4 py-4 shadow-sm sticky top-0 z-50 border-b">
+  <div class="flex items-center justify-between max-w-lg mx-auto">
+    <button id="backBtn"
+      class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">
+      ←
+    </button>
+    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">
+      Obesity Topic
+    </h1>
+    <div class="w-10"></div>
+  </div>
 </header>
 
-<!-- NAV -->
-<nav class="flex justify-center gap-4 mt-4 flex-wrap">
-  <button onclick="openPage('unhealthy-food')" class="navBtn">Unhealthy Food</button>
-  <button onclick="openPage('food-advertising')" class="navBtn">Food Advertisement</button>
-  <button onclick="openPage('mukbang')" class="navBtn">Mukbang</button>
-  <button onclick="openPage('insulin')" class="navBtn">Insulin</button>
-  <button onclick="openPage('stress')" class="navBtn">Stress</button>
-  <button onclick="openPage('obesogens')" class="navBtn">Obesogen</button>
-</nav>
+<!-- MAIN -->
+<main class="flex-1 p-4 max-w-lg mx-auto w-full">
 
-<!-- CONTENT -->
-<main class="max-w-5xl mx-auto p-6">
-
-  <div id="contentPage" class="hidden">
-    <div class="text-center mb-6">
-      <div id="contentIcon" class="text-5xl mb-2"></div>
-      <h2 id="contentTitle" class="text-2xl font-bold"></h2>
-      <p id="contentSubtitle" class="text-slate-500"></p>
-    </div>
-
-    <!-- IMAGE GRID -->
-    <div id="contentImages"
-         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    </div>
+<!-- HOME -->
+<div id="homePage">
+  <div class="text-center mb-6">
+    <p class="text-lg font-medium">Group 3 – Debate</p>
+    <p class="text-slate-500 text-sm">Project 6: Obesity – Environment</p>
   </div>
+
+  <nav class="space-y-3">
+    <button class="nav-item" data-page="unhealthy-food">🍔 Unhealthy Food</button>
+    <button class="nav-item" data-page="food-advertising">📺 Food Advertising</button>
+    <button class="nav-item" data-page="mukbang">🎬 Mukbang</button>
+    <button class="nav-item" data-page="stress">😰 Stress</button>
+    <button class="nav-item" data-page="insulin">💉 Insulin</button>
+    <button class="nav-item" data-page="obesogens">⚗️ Obesogens</button>
+  </nav>
+</div>
+
+<!-- CONTENT PAGE -->
+<div id="contentPage" class="hidden">
+  <div class="text-center mb-6">
+    <div id="contentIcon" class="text-5xl mb-2"></div>
+    <h2 id="contentTitle" class="text-2xl font-bold"></h2>
+    <p id="contentSubtitle" class="text-slate-500"></p>
+  </div>
+
+  <!-- IMAGE GRID (TỪ MIX) -->
+  <div id="contentImages"
+       class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+  </div>
+</div>
 
 </main>
 
@@ -53,75 +70,104 @@ const pageData = {
     icon: '🍔',
     title: 'Unhealthy Food',
     subtitle: 'Processed and junk food',
-    images: ['unhealthy.jpg']
+    images: ['images/unhealthy.jpg']
   },
   'food-advertising': {
     icon: '📺',
     title: 'Food Advertising',
     subtitle: 'Marketing and media impact',
     images: [
-      'advertisement1.jpg',
-      'advertisement2.jpg',
-      'advertisement3.jpg'
+      'images/advertisement1.jpg',
+      'images/advertisement2.jpg',
+      'images/advertisement3.jpg'
     ]
   },
   'mukbang': {
     icon: '🎬',
-    title: 'Mukbang Videos',
+    title: 'Mukbang',
     subtitle: 'Eating broadcast content',
-    images: ['mukbang1.jpg', 'mukbang2.jpg']
-  },
-  'insulin': {
-    icon: '💉',
-    title: 'Insulin',
-    subtitle: 'Blood sugar regulation',
-    images: ['insulin.jpg']
+    images: [
+      'images/mukbang1.jpg',
+      'images/mukbang2.jpg'
+    ]
   },
   'stress': {
     icon: '😰',
     title: 'Stress',
     subtitle: 'Mental health and wellness',
-    images: ['stress1.jpg', 'stress2.jpg', 'stress3.jpg']
+    images: [
+      'images/stress1.jpg',
+      'images/stress2.jpg',
+      'images/stress3.jpg'
+    ]
+  },
+  'insulin': {
+    icon: '💉',
+    title: 'Insulin',
+    subtitle: 'Blood sugar regulation',
+    images: ['images/insulin.jpg']
   },
   'obesogens': {
     icon: '⚗️',
     title: 'Obesogens',
     subtitle: 'Chemical compounds effects',
-    images: ['obesogen.jpg']
+    images: ['images/obesogen.jpg']
   }
 };
 
-function openPage(page) {
+function showPage(page) {
   const data = pageData[page];
   if (!data) return;
 
-  document.getElementById('contentPage').classList.remove('hidden');
-  document.getElementById('contentIcon').innerText = data.icon;
-  document.getElementById('contentTitle').innerText = data.title;
-  document.getElementById('contentSubtitle').innerText = data.subtitle;
+  homePage.classList.add('hidden');
+  contentPage.classList.remove('hidden');
+  backBtn.classList.remove('hidden');
 
-  const imgBox = document.getElementById('contentImages');
-  imgBox.innerHTML = '';
+  headerTitle.innerText = data.title;
+  contentIcon.innerText = data.icon;
+  contentTitle.innerText = data.title;
+  contentSubtitle.innerText = data.subtitle;
 
+  contentImages.innerHTML = '';
   data.images.forEach(img => {
-    imgBox.innerHTML += `
+    contentImages.innerHTML += `
       <img src="${img}"
-           class="rounded-xl shadow-md w-full object-cover"
-           alt="">
+           class="rounded-xl shadow-md w-full object-cover">
     `;
   });
 }
+
+const homePage = document.getElementById('homePage');
+const contentPage = document.getElementById('contentPage');
+const backBtn = document.getElementById('backBtn');
+const headerTitle = document.getElementById('headerTitle');
+const contentIcon = document.getElementById('contentIcon');
+const contentTitle = document.getElementById('contentTitle');
+const contentSubtitle = document.getElementById('contentSubtitle');
+const contentImages = document.getElementById('contentImages');
+
+document.querySelectorAll('.nav-item').forEach(btn => {
+  btn.onclick = () => showPage(btn.dataset.page);
+});
+
+backBtn.onclick = () => {
+  contentPage.classList.add('hidden');
+  homePage.classList.remove('hidden');
+  backBtn.classList.add('hidden');
+  headerTitle.innerText = 'Obesity Topic';
+};
 </script>
 
 <style>
-.navBtn {
+.nav-item {
+  width: 100%;
   background: white;
+  padding: 16px;
+  border-radius: 16px;
   border: 1px solid #e2e8f0;
-  padding: 8px 14px;
-  border-radius: 9999px;
-  transition: 0.2s;
+  font-weight: 500;
 }
-.navBtn:hover {
+.nav-item:hover {
   background: #f1f5f9;
 }
 </style>
