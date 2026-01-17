@@ -182,11 +182,39 @@
 <script>
 const pageData = {
   "unhealthy-food":{icon:"🍔",title:"Unhealthy Food",subtitle:"Price",images:["unhealthy.jpg","unhealthy1.jpg"]},
+    notes: [
+    "High cost of vegetables as a barrier to healthy eating.",
+    "High cost of vegetables as a barrier to healthy eating in Korea."
+  ]
+},
   "food-advertising":{icon:"📺",title:"Food Advertising",subtitle:"Media impact",images:["advertisement1.jpg","advertisement2.jpg","advertisement3.jpg"]},
+    notes: [
+    "Organizing a workshop for children",
+    "Children are the main target of the advertising.",
+    "Advertising images of families eating at McDonald’s"
+  ]
+},
   "mukbang":{icon:"🎬",title:"Mukbang",subtitle:"",images:["mukbang1.jpg","mukbang2.jpg"]},
+    notes: [
+    "Food-related videos can attract tens of millions of viewers.",
+    "Food-related videos can attract tens of millions of viewers."
+  ]
+},
   "stress":{icon:"😰",title:"Stress",subtitle:"Sweet things",images:["stress1.jpg","stress2.jpg","stress3.jpg"]},
+  notes: [
+    "The chart shows that most students tend to eat sweet foods when they feel stressed",
+    "The pie chart compares students’ responses to a question about exercise frequency, indicating that the majority engage in low levels of physical activity.",
+    "The two pie charts illustrate the number of students from many high schools in Ho Chi Minh City and the grade levels they are currently in."
+  ]
   "insulin":{icon:"💉",title:"Insulin",subtitle:"High ",images:["insulin.jpg"]},
-  "obesogens":{icon:"⚗️",title:"Obesogens",subtitle:"Daily exposure",images:["obesogen.jpg"]}
+  notes: [
+    "Nội dung sẽ được cập nhật sớm"
+  ]
+  "obesogens":{icon:"⚗️",title:"Obesogens",subtitle:"Daily exposure",images:["obesogen.jpg"]},
+    notes: [
+    "Nội dung sẽ được cập nhật sớm",
+  ]
+},
 };
 
 const homePage=document.getElementById("homePage");
@@ -220,12 +248,12 @@ function showPage(page){
   contentSubtitle.innerText=d.subtitle;
 
   contentImages.innerHTML="";
-  d.images.forEach(img=>{
+  d.images.forEach((img,index)=>{
     contentImages.innerHTML+=`
       <div class="bg-white rounded-xl shadow overflow-hidden">
         <img src="${img}" class="w-full">
         <div class="border-t text-xs italic text-slate-400 p-2 text-center">
-          Presenter explanation based on this image
+          ${d.notes[index]}
         </div>
       </div>`;
   });
@@ -242,6 +270,7 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
+
 
 
 
