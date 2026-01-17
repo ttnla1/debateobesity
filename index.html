@@ -246,8 +246,7 @@ function showPage(page){
 
 d.images.forEach((img, index) => {
 
-  // 👉 CHỈ MỤC STRESS
-  if (page === 'stress') {
+  if (currentPage === 'stress') {
 
     const stressNotes = [
       'Stress from academic and work pressure contributes to unhealthy eating behaviors.',
@@ -266,7 +265,6 @@ d.images.forEach((img, index) => {
 
   } else {
 
-    // 👉 CÁC MỤC KHÁC GIỮ NGUYÊN
     contentImages.innerHTML += `
       <img src="${img}" class="rounded-xl shadow-md w-full object-cover">
     `;
@@ -274,7 +272,6 @@ d.images.forEach((img, index) => {
   }
 
 });
-
 
 backBtn.onclick=()=>{
   homePage.classList.remove('hidden');
@@ -287,6 +284,7 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
+
 
 
 
