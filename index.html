@@ -34,6 +34,7 @@
   </div>
 
   <nav class="space-y-3">
+    <button class="nav-item" data-page="introduction">👥 Introduction</button>
     <button class="nav-item" data-page="unhealthy-food">🍔 Unhealthy Food</button>
     <button class="nav-item" data-page="food-advertising">📺 Food Advertising</button>
     <button class="nav-item" data-page="mukbang">🎬 Mukbang</button>
@@ -50,7 +51,73 @@
     <h2 id="contentTitle" class="text-2xl font-bold"></h2>
     <p id="contentSubtitle" class="text-slate-500"></p>
   </div>
+<!-- INTRODUCTION PAGE -->
+<div id="introductionPage" class="hidden">
+  <div class="text-center mb-6">
+    <div
+      class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center text-4xl mx-auto mb-4">
+      👥
+    </div>
+    <h2 class="text-2xl font-bold">Introduction</h2>
+    <p class="text-slate-500">Team members overview</p>
+  </div>
 
+  <div class="space-y-4">
+
+    <!-- Leader -->
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-xl">
+        👩‍🎓
+      </div>
+      <div>
+        <h3 class="font-semibold">Trịnh Thị Ngọc Linh</h3>
+        <p class="text-sm text-slate-500">Team Leader</p>
+      </div>
+    </div>
+
+    <!-- Member -->
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center text-xl">
+        👩‍🎓
+      </div>
+      <div>
+        <h3 class="font-semibold">Lê Nguyễn Thảo My</h3>
+        <p class="text-sm text-slate-500">Team Member</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-xl">
+        👨‍🎓
+      </div>
+      <div>
+        <h3 class="font-semibold">Nguyễn Tiểu Long</h3>
+        <p class="text-sm text-slate-500">Team Member</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center text-xl">
+        👨‍🎓
+      </div>
+      <div>
+        <h3 class="font-semibold">Nguyễn Minh Quân</h3>
+        <p class="text-sm text-slate-500">Team Member</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-purple-400 rounded-full flex items-center justify-center text-xl">
+        👨‍🎓
+      </div>
+      <div>
+        <h3 class="font-semibold">Nguyễn Minh Khang</h3>
+        <p class="text-sm text-slate-500">Team Member</p>
+      </div>
+    </div>
+
+  </div>
+</div>
   <!-- IMAGE GRID (TỪ MIX) -->
   <div id="contentImages"
        class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -116,14 +183,23 @@ const pageData = {
 };
 
 function showPage(page) {
+  homePage.classList.add('hidden');
+  contentPage.classList.add('hidden');
+  introductionPage.classList.add('hidden');
+  backBtn.classList.remove('hidden');
+
+  if (page === 'introduction') {
+    introductionPage.classList.remove('hidden');
+    headerTitle.innerText = 'Introduction';
+    return;
+  }
+
   const data = pageData[page];
   if (!data) return;
 
-  homePage.classList.add('hidden');
   contentPage.classList.remove('hidden');
-  backBtn.classList.remove('hidden');
-
   headerTitle.innerText = data.title;
+
   contentIcon.innerText = data.icon;
   contentTitle.innerText = data.title;
   contentSubtitle.innerText = data.subtitle;
@@ -145,6 +221,7 @@ const contentIcon = document.getElementById('contentIcon');
 const contentTitle = document.getElementById('contentTitle');
 const contentSubtitle = document.getElementById('contentSubtitle');
 const contentImages = document.getElementById('contentImages');
+const introductionPage = document.getElementById('introductionPage');
 
 document.querySelectorAll('.nav-item').forEach(btn => {
   btn.onclick = () => showPage(btn.dataset.page);
@@ -174,3 +251,4 @@ backBtn.onclick = () => {
 
 </body>
 </html>
+
