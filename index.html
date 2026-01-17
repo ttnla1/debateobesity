@@ -1,251 +1,229 @@
 <!doctype html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Topics - Group 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { font-family: 'Be Vietnam Pro', sans-serif; }
-    .nav-item { transition: all 0.25s ease; }
-    .nav-item:active { transform: scale(0.97); }
-
-    .page-transition { animation: fadeIn .3s ease; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+    .page-transition { animation: fade .3s ease; }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .member-card { animation: slideIn .4s ease forwards; opacity: 0; }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-20px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    .member-card:nth-child(1){animation-delay:.1s}
-    .member-card:nth-child(2){animation-delay:.2s}
-    .member-card:nth-child(3){animation-delay:.3s}
-    .member-card:nth-child(4){animation-delay:.4s}
-    .member-card:nth-child(5){animation-delay:.5s}
   </style>
 </head>
 
-<body class="h-full bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
 
 <!-- HEADER -->
-<header class="bg-white/80 backdrop-blur-md px-4 py-4 shadow-sm sticky top-0 z-50 border-b">
-  <div class="flex items-center justify-between max-w-lg mx-auto">
+<header class="bg-white/80 backdrop-blur sticky top-0 z-50 border-b">
+  <div class="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
     <button id="backBtn"
-      class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">
+      class="hidden w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center">
       ←
     </button>
-    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">
+    <h1 id="headerTitle" class="text-lg font-bold text-center flex-1">
       Health Topics
     </h1>
-    <div class="w-10"></div>
+    <div class="w-9"></div>
   </div>
 </header>
 
-<main class="flex-1 p-4 max-w-lg mx-auto w-full">
+<main class="max-w-lg mx-auto p-4">
 
-<!-- HOME (TESTYH UI) -->
+<!-- HOME -->
 <div id="homePage" class="page-transition">
   <div class="text-center mb-6">
-    <p class="text-lg font-medium">Group 3 – Debate</p>
-    <p class="text-slate-500 text-sm">Project 6: Obesity – Environment</p>
+    <p class="text-lg font-semibold">Group 3 – Debate</p>
+    <p class="text-sm text-slate-500">Project: Obesity – Environment</p>
   </div>
 
-  <nav class="space-y-3">
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border"
+  <div class="space-y-3">
+    <button class="nav w-full bg-white rounded-2xl p-4 shadow flex gap-4 items-center"
       data-page="introduction">
-      <div class="w-14 h-14 bg-gradient-to-r from-violet-100 to-purple-100 rounded-xl flex items-center justify-center text-2xl">👥</div>
+      <div class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-xl">👥</div>
       <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Introduction</h3>
-        <p class="text-sm text-slate-500">Team members overview</p>
+        <p class="font-semibold">Introduction</p>
+        <p class="text-xs text-slate-500">Team & framework</p>
       </div>
       ›
     </button>
 
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="unhealthy-food">
-      <div class="w-14 h-14 bg-gradient-to-r from-red-100 to-orange-100 rounded-xl flex items-center justify-center text-2xl">🍔</div>
+    <button class="nav w-full bg-white rounded-2xl p-4 shadow flex gap-4 items-center"
+      data-page="unhealthy-food">
+      <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center">🍔</div>
       <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Unhealthy Food</h3>
-        <p class="text-sm text-slate-500">Processed and junk food</p>
+        <p class="font-semibold">Unhealthy Food</p>
+        <p class="text-xs text-slate-500">Food environment</p>
       </div>›
     </button>
 
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="food-advertising">
-      <div class="w-14 h-14 bg-gradient-to-r from-amber-100 to-yellow-100 rounded-xl flex items-center justify-center text-2xl">📺</div>
+    <button class="nav w-full bg-white rounded-2xl p-4 shadow flex gap-4 items-center"
+      data-page="food-advertising">
+      <div class="w-12 h-12 rounded-xl bg-yellow-100 flex items-center justify-center">📺</div>
       <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Food Advertising</h3>
-        <p class="text-sm text-slate-500">Marketing and media impact</p>
+        <p class="font-semibold">Food Advertising</p>
+        <p class="text-xs text-slate-500">Media influence</p>
       </div>›
     </button>
 
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="mukbang">
-      <div class="w-14 h-14 bg-gradient-to-r from-pink-100 to-rose-100 rounded-xl flex items-center justify-center text-2xl">🎬</div>
+    <button class="nav w-full bg-white rounded-2xl p-4 shadow flex gap-4 items-center"
+      data-page="mukbang">
+      <div class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center">🎬</div>
       <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Mukbang</h3>
-        <p class="text-sm text-slate-500">Eating broadcast content</p>
+        <p class="font-semibold">Mukbang</p>
+        <p class="text-xs text-slate-500">Eating culture</p>
       </div>›
     </button>
 
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="obesogens">
-      <div class="w-14 h-14 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-xl flex items-center justify-center text-2xl">⚗️</div>
+    <button class="nav w-full bg-white rounded-2xl p-4 shadow flex gap-4 items-center"
+      data-page="stress">
+      <div class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center">😰</div>
       <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Obesogens</h3>
-        <p class="text-sm text-slate-500">Chemical compounds effects</p>
+        <p class="font-semibold">Stress</p>
+        <p class="text-xs text-slate-500">Lifestyle pressure</p>
       </div>›
     </button>
-
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="stress">
-      <div class="w-14 h-14 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center text-2xl">😰</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Stress</h3>
-        <p class="text-sm text-slate-500">Mental health</p>
-      </div>›
-    </button>
-
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="insulin">
-      <div class="w-14 h-14 bg-gradient-to-r from-emerald-100 to-green-100 rounded-xl flex items-center justify-center text-2xl">💉</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Insulin</h3>
-        <p class="text-sm text-slate-500">Blood sugar regulation</p>
-      </div>›
-    </button>
-  </nav>
+  </div>
 </div>
 
-<!-- INTRODUCTION (FULL TESTYH) -->
+<!-- INTRODUCTION -->
 <div id="introductionPage" class="hidden page-transition">
   <div class="text-center mb-6">
-    <div class="w-20 h-20 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 border-2">
-      👥
-    </div>
-    <h2 class="text-2xl font-bold">Team Members</h2>
-    <p class="text-slate-500">Group 3 – Debate</p>
+    <div class="text-4xl mb-2">👥</div>
+    <h2 class="text-xl font-bold">Team Members</h2>
+    <p class="text-sm text-slate-500">Group 3</p>
   </div>
 
-  <div class="space-y-3">
-    <div class="member-card bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-2xl p-4 flex gap-4">
-      <div class="w-12 h-12 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full flex items-center justify-center">👩‍🎓</div>
-      <div>
-        <h3 class="font-semibold text-lg">Trịnh Thị Ngọc Linh</h3>
-        <p class="text-amber-600 text-sm font-medium">Team Leader</p>
-      </div>
+  <div class="space-y-3 mb-6">
+    <div class="bg-white rounded-xl p-4 shadow">
+      <p class="font-semibold">Trịnh Thị Ngọc Linh</p>
+      <p class="text-xs text-amber-600">Team Leader</p>
     </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center">👩‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Lê Nguyễn Thảo My</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">👨‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Nguyễn Tiểu Long</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full flex items-center justify-center">👨‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Nguyễn Minh Quân</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-violet-400 to-purple-400 rounded-full flex items-center justify-center">👨‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Nguyễn Minh Khang</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
+    <div class="bg-white rounded-xl p-4 shadow">Lê Nguyễn Thảo My</div>
+    <div class="bg-white rounded-xl p-4 shadow">Nguyễn Tiểu Long</div>
+    <div class="bg-white rounded-xl p-4 shadow">Nguyễn Minh Quân</div>
+    <div class="bg-white rounded-xl p-4 shadow">Nguyễn Minh Khang</div>
   </div>
+
+  <!-- 🔒 ĐÓNG HỘP LẬP LUẬN -->
+  <p class="text-sm text-slate-600 italic text-center">
+    We do not claim that the environment determines obesity in 100% of cases.
+    However, the environment significantly increases the probability of obesity
+    at the societal level.
+  </p>
 </div>
 
-<!-- CONTENT PAGE (MIX LOGIC – IMAGE GRID) -->
+<!-- CONTENT PAGE -->
 <div id="contentPage" class="hidden page-transition">
   <div class="text-center mb-6">
-    <div id="contentIcon" class="text-5xl mb-2"></div>
-    <h2 id="contentTitle" class="text-2xl font-bold"></h2>
-    <p id="contentSubtitle" class="text-slate-500"></p>
+    <div id="contentIcon" class="text-4xl mb-2"></div>
+    <h2 id="contentTitle" class="text-xl font-bold"></h2>
+    <p id="contentSubtitle" class="text-sm text-slate-500"></p>
   </div>
 
-  <div id="contentImages" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+  <div id="contentImages" class="grid grid-cols-1 gap-4"></div>
 </div>
 
 </main>
 
-<footer class="text-center text-slate-400 text-sm py-4">
-  © 2026 Obesity Topic
-</footer>
-
 <script>
 const pageData = {
-  'unhealthy-food': {
-    icon:'🍔', title:'Unhealthy Food', subtitle:'Processed and junk food',
-    images:['unhealthy.jpg']
+  "unhealthy-food": {
+    icon: "🍔",
+    title: "Unhealthy Food Environment",
+    subtitle: "Easy access to fast and processed food",
+    images: ["unhealthy1.jpg", "unhealthy2.jpg"]
   },
-  'food-advertising': {
-    icon:'📺', title:'Food Advertising', subtitle:'Marketing and media impact',
-    images:['advertisement1.jpg','advertisement2.jpg','advertisement3.jpg']
+  "food-advertising": {
+    icon: "📺",
+    title: "Food Advertising",
+    subtitle: "Marketing shapes food choices",
+    images: ["ads1.jpg", "ads2.jpg"]
   },
-  'mukbang': {
-    icon:'🎬', title:'Mukbang', subtitle:'Eating broadcast content',
-    images:['mukbang1.jpg','mukbang2.jpg']
+  "mukbang": {
+    icon: "🎬",
+    title: "Mukbang Culture",
+    subtitle: "Normalization of overeating",
+    images: ["mukbang1.jpg", "mukbang2.jpg"]
   },
-  'stress': {
-    icon:'😰', title:'Stress', subtitle:'Mental health and wellness',
-    images:['stress1.jpg','stress2.jpg','stress3.jpg']
-  },
-  'insulin': {
-    icon:'💉', title:'Insulin', subtitle:'Blood sugar regulation',
-    images:['insulin.jpg']
-  },
-  'obesogens': {
-    icon:'⚗️', title:'Obesogens', subtitle:'Chemical compounds effects',
-    images:['obesogen.jpg']
+  "stress": {
+    icon: "😰",
+    title: "Stress",
+    subtitle: "Stress-related eating behavior",
+    images: ["stress1.jpg"]
   }
 };
 
-const homePage = document.getElementById('homePage');
-const introPage = document.getElementById('introductionPage');
-const contentPage = document.getElementById('contentPage');
-const backBtn = document.getElementById('backBtn');
+const home = document.getElementById("homePage");
+const intro = document.getElementById("introductionPage");
+const content = document.getElementById("contentPage");
+const backBtn = document.getElementById("backBtn");
 
-document.querySelectorAll('.nav-item').forEach(btn=>{
-  btn.onclick=()=>showPage(btn.dataset.page);
+document.querySelectorAll(".nav").forEach(btn => {
+  btn.onclick = () => showPage(btn.dataset.page);
 });
 
-function showPage(page){
-  homePage.classList.add('hidden');
-  introPage.classList.add('hidden');
-  contentPage.classList.add('hidden');
-  backBtn.classList.remove('hidden');
+function showPage(page) {
+  home.classList.add("hidden");
+  intro.classList.add("hidden");
+  content.classList.add("hidden");
+  backBtn.classList.remove("hidden");
 
-  if(page==='introduction'){
-    introPage.classList.remove('hidden');
-    headerTitle.innerText='Introduction';
+  if (page === "introduction") {
+    intro.classList.remove("hidden");
+    headerTitle.innerText = "Introduction";
     return;
   }
 
-  const d=pageData[page];
-  if(!d)return;
+  const d = pageData[page];
+  if (!d) return;
 
-  contentPage.classList.remove('hidden');
-  headerTitle.innerText=d.title;
-  contentIcon.innerText=d.icon;
-  contentTitle.innerText=d.title;
-  contentSubtitle.innerText=d.subtitle;
+  content.classList.remove("hidden");
+  headerTitle.innerText = d.title;
+  contentIcon.innerText = d.icon;
+  contentTitle.innerText = d.title;
+  contentSubtitle.innerText = d.subtitle;
 
-  contentImages.innerHTML='';
-  d.images.forEach(i=>{
-    contentImages.innerHTML+=`<img src="${i}" class="rounded-xl shadow-md w-full object-cover">`;
+  contentImages.innerHTML = "";
+  d.images.forEach(img => {
+    contentImages.innerHTML += `
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <img src="${img}" class="w-full h-48 object-cover">
+        <p class="text-xs text-slate-600 p-2 text-center">
+          ${getImageNote(page)}
+        </p>
+      </div>
+    `;
   });
 }
 
-backBtn.onclick=()=>{
-  homePage.classList.remove('hidden');
-  introPage.classList.add('hidden');
-  contentPage.classList.add('hidden');
-  backBtn.classList.add('hidden');
-  headerTitle.innerText='Health Topics';
+function getImageNote(page) {
+  switch (page) {
+    case "unhealthy-food":
+      return "Images illustrating an environment with easy access to unhealthy food.";
+    case "food-advertising":
+      return "Images showing how food advertising influences eating behavior.";
+    case "mukbang":
+      return "Images representing the normalization of excessive eating through media.";
+    case "stress":
+      return "Images illustrating stress-related eating in modern life.";
+    default:
+      return "Visual evidence of environmental influence on obesity.";
+  }
+}
+
+backBtn.onclick = () => {
+  home.classList.remove("hidden");
+  intro.classList.add("hidden");
+  content.classList.add("hidden");
+  backBtn.classList.add("hidden");
+  headerTitle.innerText = "Health Topics";
 };
 </script>
 
