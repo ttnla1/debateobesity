@@ -242,11 +242,39 @@ function showPage(page){
   contentTitle.innerText=d.title;
   contentSubtitle.innerText=d.subtitle;
 
-  contentImages.innerHTML='';
-  d.images.forEach(i=>{
-    contentImages.innerHTML+=`<img src="${i}" class="rounded-xl shadow-md w-full object-cover">`;
-  });
-}
+  contentImages.innerHTML = '';
+
+d.images.forEach((img, index) => {
+
+  // 👉 CHỈ MỤC STRESS
+  if (page === 'stress') {
+
+    const stressNotes = [
+      'Stress from academic and work pressure contributes to unhealthy eating behaviors.',
+      'Chronic stress increases the consumption of high-sugar and high-fat foods.',
+      'Stress-related lifestyles reduce physical activity and disrupt healthy routines.'
+    ];
+
+    contentImages.innerHTML += `
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <img src="${img}" class="w-full h-48 object-cover">
+        <p class="text-xs text-slate-600 p-2 text-center">
+          ${stressNotes[index] || ''}
+        </p>
+      </div>
+    `;
+
+  } else {
+
+    // 👉 CÁC MỤC KHÁC GIỮ NGUYÊN
+    contentImages.innerHTML += `
+      <img src="${img}" class="rounded-xl shadow-md w-full object-cover">
+    `;
+
+  }
+
+});
+
 
 backBtn.onclick=()=>{
   homePage.classList.remove('hidden');
@@ -259,5 +287,6 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
+
 
 
