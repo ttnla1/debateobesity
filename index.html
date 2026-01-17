@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health Topics - Group Project</title>
+  <title>Obesity Topic - Group 3 - Project 6</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -189,13 +189,9 @@
       <h2 id="contentTitle" class="text-2xl font-bold mb-2 text-slate-800"></h2>
       <p id="contentSubtitle" class="text-slate-500"></p>
      </div>
-     <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
-      <div class="text-6xl mb-4">
-       📝
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-slate-800">Content Coming Soon</h3>
-      <p class="text-slate-500">This section will be updated later. Please check back soon!</p>
-     </div>
+    <div id="contentBody"
+     class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
+</div>
     </div>
    </main><!-- Footer -->
    <footer class="bg-white/50 backdrop-blur-sm px-4 py-3 text-center border-t border-slate-200">
@@ -222,6 +218,9 @@
         borderColor: 'border-red-200',
         title: 'Unhealthy Food',
         subtitle: 'Processed and junk food'
+        images: [
+    'images/unhealthy.jpg'
+  ]
       },
       'food-advertising': {
         icon: '📺',
@@ -229,6 +228,11 @@
         borderColor: 'border-amber-200',
         title: 'Food Advertising',
         subtitle: 'Marketing and media impact'
+        images: [
+  'images/advertisement1.jpg',
+  'images/advertisement2.jpg',
+  'images/advertisement3.jpg'
+]
       },
       'mukbang': {
         icon: '🎬',
@@ -236,6 +240,10 @@
         borderColor: 'border-pink-200',
         title: 'Mukbang Videos',
         subtitle: 'Eating broadcast content'
+        images: [
+  'images/mukbang1.jpg',
+  'images/mukbang2.jpg'
+]
       },
       'obesogens': {
         icon: '⚗️',
@@ -243,6 +251,7 @@
         borderColor: 'border-cyan-200',
         title: 'Obesogens',
         subtitle: 'Chemical compounds effects'
+        images: ['images/obesogen.jpg']
       },
       'stress': {
         icon: '😰',
@@ -250,6 +259,11 @@
         borderColor: 'border-indigo-200',
         title: 'Stress',
         subtitle: 'Mental health and wellness'
+        images: [
+  'images/stress1.jpg',
+  'images/stress2.jpg',
+  'images/stress3.jpg'
+]
       },
       'insulin': {
         icon: '💉',
@@ -257,6 +271,7 @@
         borderColor: 'border-emerald-200',
         title: 'Insulin',
         subtitle: 'Blood sugar regulation'
+        images: ['images/insulin.jpg']
       }
     };
 
@@ -355,4 +370,5 @@
     }
   </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bee269f8013c7c6',t:'MTc2ODU3MjE1MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
 </html>
