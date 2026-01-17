@@ -1,288 +1,182 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Obesity Topic</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Group 3 – Debate</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-full bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
+<body class="bg-slate-50 min-h-screen flex flex-col">
 
 <!-- HEADER -->
-<header class="bg-white/80 backdrop-blur-md px-4 py-4 shadow-sm sticky top-0 z-50 border-b">
-  <div class="flex items-center justify-between max-w-lg mx-auto">
-    <button id="backBtn"
-      class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">
-      ←
-    </button>
-    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">
-      Obesity Topic
-    </h1>
-    <div class="w-10"></div>
-  </div>
+<header class="bg-white shadow p-4 flex items-center gap-3">
+  <button id="backBtn" onclick="goBack()" class="hidden text-xl">←</button>
+  <h1 id="headerTitle" class="text-lg font-semibold">Group 3 – Debate</h1>
 </header>
 
-<!-- MAIN -->
 <main class="flex-1 p-4 max-w-lg mx-auto w-full">
 
-<!-- HOME -->
-<div id="homePage">
-  <div class="text-center mb-6">
-    <p class="text-lg font-medium">Group 3 – Debate</p>
-    <p class="text-slate-500 text-sm">Project 6: Obesity – Environment</p>
+  <!-- HOME PAGE (TESTYH UI) -->
+  <div id="homePage" class="space-y-4">
+
+    <div class="text-center mb-6">
+      <p class="text-slate-600 font-medium text-lg">Group 3 – Debate</p>
+      <p class="text-slate-400 text-sm">Project 6: Obesity – Environment</p>
+    </div>
+
+    <!-- BUTTON LIST -->
+    <button onclick="showPage('introduction')" class="w-full bg-white rounded-2xl p-4 flex items-center gap-4 shadow">
+      <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">👥</div>
+      <div class="flex-1 text-left">
+        <p class="font-semibold">Introduction</p>
+        <p class="text-sm text-slate-500">Team members overview</p>
+      </div>
+      <span class="text-slate-400 text-xl">›</span>
+    </button>
+
+    <button onclick="showPage('unhealthy')" class="w-full bg-white rounded-2xl p-4 flex items-center gap-4 shadow">
+      <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">🍔</div>
+      <div class="flex-1 text-left">
+        <p class="font-semibold">Unhealthy Food</p>
+        <p class="text-sm text-slate-500">Processed and junk food</p>
+      </div>
+      <span class="text-slate-400 text-xl">›</span>
+    </button>
+
+    <button onclick="showPage('advertising')" class="w-full bg-white rounded-2xl p-4 flex items-center gap-4 shadow">
+      <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">📺</div>
+      <div class="flex-1 text-left">
+        <p class="font-semibold">Food Advertising</p>
+        <p class="text-sm text-slate-500">Marketing and media impact</p>
+      </div>
+      <span class="text-slate-400 text-xl">›</span>
+    </button>
+
   </div>
 
-  <nav class="space-y-3">
-    <button class="nav-item" data-page="introduction">👥 Introduction</button>
-    <button class="nav-item" data-page="unhealthy-food">🍔 Unhealthy Food</button>
-    <button class="nav-item" data-page="food-advertising">📺 Food Advertising</button>
-    <button class="nav-item" data-page="mukbang">🎬 Mukbang</button>
-    <button class="nav-item" data-page="stress">😰 Stress</button>
-    <button class="nav-item" data-page="insulin">💉 Insulin</button>
-    <button class="nav-item" data-page="obesogens">⚗️ Obesogens</button>
-  </nav>
-</div>
+  <!-- INTRODUCTION PAGE (TESTYH CONTENT) -->
+  <div id="introductionPage" class="hidden space-y-4">
 
-<!-- CONTENT PAGE -->
-<div id="contentPage" class="hidden">
-  <div class="text-center mb-6">
-    <div id="contentIcon" class="text-5xl mb-2"></div>
-    <h2 id="contentTitle" class="text-2xl font-bold"></h2>
-    <p id="contentSubtitle" class="text-slate-500"></p>
-  </div>
-<!-- INTRODUCTION PAGE (MATCH UI SAMPLE) -->
-<div id="introductionPage" class="hidden">
-
-  <!-- Header text -->
-  <div class="text-center mb-6">
-    <p class="text-slate-600 font-medium text-lg">Group 3 – Debate</p>
-    <p class="text-slate-400 text-sm">Project 6: Obesity – Environment</p>
-  </div>
-
-  <div class="space-y-4">
-
-    <!-- Introduction Card -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-xl">
-        👥
-      </div>
-      <div class="flex-1">
-        <h3 class="font-semibold text-slate-800">Introduction</h3>
-        <p class="text-slate-500 text-sm">Team members overview</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-bold">Introduction</h2>
+      <p class="text-slate-500">Team members overview</p>
     </div>
 
-    <!-- Unhealthy Food -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-xl">
-        🍔
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center">👩‍🎓</div>
+      <div>
+        <p class="font-semibold">Trịnh Thị Ngọc Linh</p>
+        <p class="text-sm text-slate-500">Team Leader</p>
       </div>
-      <div class="flex-1">
-        <h3 class="font-semibold">Unhealthy Food</h3>
-        <p class="text-slate-500 text-sm">Processed and junk food</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
     </div>
 
-    <!-- Food Advertising -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center text-xl">
-        📺
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-pink-400 rounded-full flex items-center justify-center">👩‍🎓</div>
+      <div>
+        <p class="font-semibold">Lê Nguyễn Thảo My</p>
+        <p class="text-sm text-slate-500">Team Member</p>
       </div>
-      <div class="flex-1">
-        <h3 class="font-semibold">Food Advertising</h3>
-        <p class="text-slate-500 text-sm">Marketing and media impact</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
     </div>
 
-    <!-- Mukbang -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-xl">
-        🎬
+    <div class="bg-white rounded-2xl p-4 shadow flex items-center gap-4">
+      <div class="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center">👨‍🎓</div>
+      <div>
+        <p class="font-semibold">Nguyễn Tiểu Long</p>
+        <p class="text-sm text-slate-500">Team Member</p>
       </div>
-      <div class="flex-1">
-        <h3 class="font-semibold">Mukbang Videos</h3>
-        <p class="text-slate-500 text-sm">Eating broadcast content</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
-    </div>
-
-    <!-- Obesogens -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center text-xl">
-        ⚗️
-      </div>
-      <div class="flex-1">
-        <h3 class="font-semibold">Obesogens</h3>
-        <p class="text-slate-500 text-sm">Chemical compounds effects</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
-    </div>
-
-    <!-- Stress -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-xl">
-        😰
-      </div>
-      <div class="flex-1">
-        <h3 class="font-semibold">Stress</h3>
-        <p class="text-slate-500 text-sm">Mental health and wellness</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
-    </div>
-
-    <!-- Insulin -->
-    <div class="bg-white rounded-2xl p-4 flex items-center gap-4 shadow-md">
-      <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-xl">
-        💉
-      </div>
-      <div class="flex-1">
-        <h3 class="font-semibold">Insulin</h3>
-        <p class="text-slate-500 text-sm">Blood sugar regulation</p>
-      </div>
-      <span class="text-slate-400 text-xl">›</span>
     </div>
 
   </div>
-</div>
+
+  <!-- CONTENT PAGE (MIX LOGIC – IMAGE GRID) -->
+  <div id="contentPage" class="hidden">
+
+    <div class="text-center mb-6">
+      <div id="contentIcon"
+        class="w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 border-2">
+      </div>
+      <h2 id="contentTitle" class="text-2xl font-bold"></h2>
+      <p id="contentSubtitle" class="text-slate-500"></p>
+    </div>
+
+    <div id="contentImages" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
 
   </div>
-</div>
-  <!-- IMAGE GRID (TỪ MIX) -->
-  <div id="contentImages"
-       class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-  </div>
-</div>
 
 </main>
 
-<!-- FOOTER -->
-<footer class="text-center text-slate-400 text-sm py-4">
-  © 2026 Obesity Topic
-</footer>
-
+<!-- SCRIPT (GIỮ NGUYÊN LOGIC MIX) -->
 <script>
-const pageData = {
-  'unhealthy-food': {
-    icon: '🍔',
-    title: 'Unhealthy Food',
-    subtitle: 'Processed and junk food',
-    images: ['unhealthy.jpg']
-  },
-  'food-advertising': {
-    icon: '📺',
-    title: 'Food Advertising',
-    subtitle: 'Marketing and media impact',
-    images: [
-      'advertisement1.jpg',
-      'advertisement2.jpg',
-      'advertisement3.jpg'
-    ]
-  },
-  'mukbang': {
-    icon: '🎬',
-    title: 'Mukbang',
-    subtitle: 'Eating broadcast content',
-    images: [
-      'mukbang1.jpg',
-      'mukbang2.jpg'
-    ]
-  },
-  'stress': {
-    icon: '😰',
-    title: 'Stress',
-    subtitle: 'Mental health and wellness',
-    images: [
-      'stress1.jpg',
-      'stress2.jpg',
-      'stress3.jpg'
-    ]
-  },
-  'insulin': {
-    icon: '💉',
-    title: 'Insulin',
-    subtitle: 'Blood sugar regulation',
-    images: ['insulin.jpg']
-  },
-  'obesogens': {
-    icon: '⚗️',
-    title: 'Obesogens',
-    subtitle: 'Chemical compounds effects',
-    images: ['obesogen.jpg']
+  const homePage = document.getElementById('homePage');
+  const introductionPage = document.getElementById('introductionPage');
+  const contentPage = document.getElementById('contentPage');
+  const backBtn = document.getElementById('backBtn');
+  const headerTitle = document.getElementById('headerTitle');
+
+  const contentIcon = document.getElementById('contentIcon');
+  const contentTitle = document.getElementById('contentTitle');
+  const contentSubtitle = document.getElementById('contentSubtitle');
+  const contentImages = document.getElementById('contentImages');
+
+  const pageData = {
+    unhealthy: {
+      title: "Unhealthy Food",
+      subtitle: "Processed and junk food",
+      icon: "🍔",
+      images: [
+        "https://via.placeholder.com/300x200",
+        "https://via.placeholder.com/300x200"
+      ]
+    },
+    advertising: {
+      title: "Food Advertising",
+      subtitle: "Marketing and media impact",
+      icon: "📺",
+      images: [
+        "https://via.placeholder.com/300x200",
+        "https://via.placeholder.com/300x200"
+      ]
+    }
+  };
+
+  function showPage(page) {
+    homePage.classList.add('hidden');
+    introductionPage.classList.add('hidden');
+    contentPage.classList.add('hidden');
+    backBtn.classList.remove('hidden');
+
+    if (page === 'introduction') {
+      introductionPage.classList.remove('hidden');
+      headerTitle.innerText = 'Introduction';
+      return;
+    }
+
+    const data = pageData[page];
+    if (!data) return;
+
+    contentPage.classList.remove('hidden');
+    headerTitle.innerText = data.title;
+
+    contentIcon.innerText = data.icon;
+    contentTitle.innerText = data.title;
+    contentSubtitle.innerText = data.subtitle;
+
+    contentImages.innerHTML = '';
+    data.images.forEach(img => {
+      contentImages.innerHTML += `
+        <img src="${img}" class="rounded-xl shadow-md w-full object-cover">
+      `;
+    });
   }
-};
 
-function showPage(page) {
-  homePage.classList.add('hidden');
-  contentPage.classList.add('hidden');
-  introductionPage.classList.add('hidden');
-  backBtn.classList.remove('hidden');
-
-  if (page === 'introduction') {
-    introductionPage.classList.remove('hidden');
-    headerTitle.innerText = 'Introduction';
-    return;
+  function goBack() {
+    homePage.classList.remove('hidden');
+    introductionPage.classList.add('hidden');
+    contentPage.classList.add('hidden');
+    backBtn.classList.add('hidden');
+    headerTitle.innerText = 'Group 3 – Debate';
   }
-
-  const data = pageData[page];
-  if (!data) return;
-
-  contentPage.classList.remove('hidden');
-  headerTitle.innerText = data.title;
-
-  contentIcon.innerText = data.icon;
-  contentTitle.innerText = data.title;
-  contentSubtitle.innerText = data.subtitle;
-
-  contentImages.innerHTML = '';
-  data.images.forEach(img => {
-    contentImages.innerHTML += `
-      <img src="${img}"
-           class="rounded-xl shadow-md w-full object-cover">
-    `;
-  });
-}
-
-const homePage = document.getElementById('homePage');
-const contentPage = document.getElementById('contentPage');
-const backBtn = document.getElementById('backBtn');
-const headerTitle = document.getElementById('headerTitle');
-const contentIcon = document.getElementById('contentIcon');
-const contentTitle = document.getElementById('contentTitle');
-const contentSubtitle = document.getElementById('contentSubtitle');
-const contentImages = document.getElementById('contentImages');
-const introductionPage = document.getElementById('introductionPage');
-
-document.querySelectorAll('.nav-item').forEach(btn => {
-  btn.onclick = () => showPage(btn.dataset.page);
-});
-
-backBtn.onclick = () => {
-  contentPage.classList.add('hidden');
-  homePage.classList.remove('hidden');
-  backBtn.classList.add('hidden');
-  headerTitle.innerText = 'Obesity Topic';
-};
 </script>
-
-<style>
-.nav-item {
-  width: 100%;
-  background: white;
-  padding: 16px;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
-  font-weight: 500;
-}
-.nav-item:hover {
-  background: #f1f5f9;
-}
-</style>
 
 </body>
 </html>
-
-
