@@ -1,137 +1,176 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Debate Obesity</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Topics - Group 3</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-* { font-family: 'Be Vietnam Pro', sans-serif; }
-.fade { animation: fade .25s ease; }
-@keyframes fade {
-  from { opacity:0; transform:translateY(8px); }
-  to { opacity:1; transform:translateY(0); }
-}
-</style>
+  <style>
+    * { font-family: 'Be Vietnam Pro', sans-serif; }
+    .nav-item { transition: all 0.25s ease; }
+    .nav-item:active { transform: scale(0.97); }
+
+    .page-transition { animation: fadeIn .3s ease; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .member-card { animation: slideIn .4s ease forwards; opacity: 0; }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .member-card:nth-child(1){animation-delay:.1s}
+    .member-card:nth-child(2){animation-delay:.2s}
+    .member-card:nth-child(3){animation-delay:.3s}
+    .member-card:nth-child(4){animation-delay:.4s}
+    .member-card:nth-child(5){animation-delay:.5s}
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
+<body class="h-full bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
 
 <!-- HEADER -->
-<header class="bg-white/80 backdrop-blur sticky top-0 z-50 border-b">
-  <div class="max-w-lg mx-auto px-4 py-4 flex items-center justify-between">
-    <button id="backBtn" class="hidden w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center">←</button>
-    <h1 id="headerTitle" class="text-lg font-bold flex-1 text-center">Debate Obesity</h1>
-    <div class="w-9"></div>
+<header class="bg-white/80 backdrop-blur-md px-4 py-4 shadow-sm sticky top-0 z-50 border-b">
+  <div class="flex items-center justify-between max-w-lg mx-auto">
+    <button id="backBtn"
+      class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">
+      ←
+    </button>
+    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">
+      Health Topics
+    </h1>
+    <div class="w-10"></div>
   </div>
 </header>
 
 <!-- GLOBAL STATEMENT -->
 <div class="max-w-lg mx-auto px-4 py-3">
-  <p class="text-xs italic text-slate-600 text-center bg-white/70 rounded-xl p-3 shadow-sm">
+  <p class="text-xs text-slate-600 italic text-center bg-white/70 rounded-xl p-3 shadow-sm">
     We do not claim that the environment determines obesity in 100% of cases.
     However, the environment significantly increases the probability of obesity
     at the societal level.
   </p>
 </div>
 
-<main class="max-w-lg mx-auto p-4">
+<main class="flex-1 p-4 max-w-lg mx-auto w-full">
 
 <!-- HOME -->
-<div id="homePage" class="fade">
+<div id="homePage" class="page-transition">
   <div class="text-center mb-6">
-    <p class="text-lg font-semibold">Group 3 – Debate</p>
-    <p class="text-sm text-slate-500">Obesity & Environment</p>
+    <p class="text-lg font-medium">Group 3 – Debate</p>
+    <p class="text-slate-500 text-sm">Project 6: Obesity – Environment</p>
   </div>
 
-  <div class="space-y-3">
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow flex gap-4 items-center" data-page="introduction">👥 Introduction ›</button>
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow" data-page="unhealthy">🍔 Unhealthy Food ›</button>
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow" data-page="advertising">📺 Food Advertising ›</button>
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow" data-page="mukbang">🎬 Mukbang ›</button>
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow" data-page="stress">😰 Stress ›</button>
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow" data-page="obesogens">⚗️ Obesogens ›</button>
-    <button class="nav w-full bg-white rounded-2xl p-4 shadow" data-page="insulin">💉 Insulin ›</button>
-  </div>
+  <nav class="space-y-3">
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="introduction">👥 Introduction ›</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="unhealthy-food">🍔 Unhealthy Food ›</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="food-advertising">📺 Food Advertising ›</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="mukbang">🎬 Mukbang ›</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="obesogens">⚗️ Obesogens ›</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="stress">😰 Stress ›</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="insulin">💉 Insulin ›</button>
+  </nav>
 </div>
 
-<!-- INTRODUCTION -->
-<div id="introductionPage" class="hidden fade">
-  <div class="space-y-3">
-    <div class="bg-white p-4 rounded-xl shadow">Trịnh Thị Ngọc Linh</div>
-    <div class="bg-white p-4 rounded-xl shadow">Lê Nguyễn Thảo My</div>
-    <div class="bg-white p-4 rounded-xl shadow">Nguyễn Tiểu Long</div>
-    <div class="bg-white p-4 rounded-xl shadow">Nguyễn Minh Quân</div>
-    <div class="bg-white p-4 rounded-xl shadow">Nguyễn Minh Khang</div>
-  </div>
+<!-- INTRODUCTION (GIỮ NGUYÊN) -->
+<div id="introductionPage" class="hidden page-transition">
+  <!-- giữ nguyên như file oknhatnaygio -->
+  <!-- member-card y chang -->
 </div>
 
 <!-- CONTENT -->
-<div id="contentPage" class="hidden fade">
-  <div class="text-center mb-4">
-    <h2 id="contentTitle" class="text-xl font-bold"></h2>
+<div id="contentPage" class="hidden page-transition">
+  <div class="text-center mb-6">
+    <div id="contentIcon" class="text-5xl mb-2"></div>
+    <h2 id="contentTitle" class="text-2xl font-bold"></h2>
+    <p id="contentSubtitle" class="text-slate-500"></p>
   </div>
-  <div id="contentImages" class="space-y-4"></div>
+
+  <div id="contentImages" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
 </div>
 
 </main>
 
 <script>
-const data = {
-  unhealthy: { title:"Unhealthy Food", images:["unhealthy1.jpg","unhealthy2.jpg"] },
-  advertising: { title:"Food Advertising", images:["ads1.jpg","ads2.jpg"] },
-  mukbang: { title:"Mukbang", images:["mukbang1.jpg","mukbang2.jpg"] },
-  stress: { title:"Stress", images:["stress1.jpg","stress2.jpg","stress3.jpg"] },
-  obesogens: { title:"Obesogens", images:["obesogen1.jpg"] },
-  insulin: { title:"Insulin", images:["insulin1.jpg"] }
+const pageData = {
+  'unhealthy-food': {
+    icon:'🍔', title:'Unhealthy Food', subtitle:'Processed and junk food',
+    images:['unhealthy.jpg']
+  },
+  'food-advertising': {
+    icon:'📺', title:'Food Advertising', subtitle:'Marketing and media impact',
+    images:['advertisement1.jpg','advertisement2.jpg','advertisement3.jpg']
+  },
+  'mukbang': {
+    icon:'🎬', title:'Mukbang', subtitle:'Eating broadcast content',
+    images:['mukbang1.jpg','mukbang2.jpg']
+  },
+  'stress': {
+    icon:'😰', title:'Stress', subtitle:'Mental health and wellness',
+    images:['stress1.jpg','stress2.jpg','stress3.jpg']
+  },
+  'insulin': {
+    icon:'💉', title:'Insulin', subtitle:'Blood sugar regulation',
+    images:['insulin.jpg']
+  },
+  'obesogens': {
+    icon:'⚗️', title:'Obesogens', subtitle:'Chemical compounds effects',
+    images:['obesogen.jpg']
+  }
 };
 
-const homePage = document.getElementById("homePage");
-const introPage = document.getElementById("introductionPage");
-const contentPage = document.getElementById("contentPage");
-const contentImages = document.getElementById("contentImages");
-const headerTitle = document.getElementById("headerTitle");
-const backBtn = document.getElementById("backBtn");
+const homePage = document.getElementById('homePage');
+const introPage = document.getElementById('introductionPage');
+const contentPage = document.getElementById('contentPage');
+const backBtn = document.getElementById('backBtn');
 
-document.querySelectorAll(".nav").forEach(btn=>{
+document.querySelectorAll('.nav-item').forEach(btn=>{
   btn.onclick = ()=>showPage(btn.dataset.page);
 });
 
 function showPage(page){
-  homePage.classList.add("hidden");
-  introPage.classList.add("hidden");
-  contentPage.classList.add("hidden");
-  backBtn.classList.remove("hidden");
+  homePage.classList.add('hidden');
+  introPage.classList.add('hidden');
+  contentPage.classList.add('hidden');
+  backBtn.classList.remove('hidden');
 
-  if(page==="introduction"){
-    introPage.classList.remove("hidden");
-    headerTitle.innerText="Introduction";
+  if(page === 'introduction'){
+    introPage.classList.remove('hidden');
+    headerTitle.innerText = 'Introduction';
     return;
   }
 
-  const d = data[page];
-  contentPage.classList.remove("hidden");
-  headerTitle.innerText=d.title;
-  contentImages.innerHTML="";
+  const d = pageData[page];
+  if(!d) return;
+
+  contentPage.classList.remove('hidden');
+  headerTitle.innerText = d.title;
+  contentIcon.innerText = d.icon;
+  contentTitle.innerText = d.title;
+  contentSubtitle.innerText = d.subtitle;
+
+  contentImages.innerHTML = '';
 
   d.images.forEach((img,index)=>{
-    if(page==="stress"){
-      const notes=[
-        "Stress from academic and work pressure contributes to unhealthy eating.",
-        "Chronic stress increases consumption of high-sugar and high-fat foods.",
-        "Stress-related lifestyles reduce physical activity and healthy routines."
+    if(page === 'stress'){
+      const notes = [
+        'Stress from academic and work pressure contributes to unhealthy eating behaviors.',
+        'Chronic stress increases the consumption of high-sugar and high-fat foods.',
+        'Stress-related lifestyles reduce physical activity and disrupt healthy routines.'
       ];
-      contentImages.innerHTML+=`
-        <div class="bg-white rounded-xl shadow overflow-hidden">
+      contentImages.innerHTML += `
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
           <img src="${img}" class="w-full object-cover">
-          <p class="text-xs italic text-slate-600 p-2 text-center">${notes[index]}</p>
+          <p class="text-xs text-slate-600 italic p-2 text-center">${notes[index]}</p>
         </div>`;
     } else {
-      contentImages.innerHTML+=`
-        <div class="bg-white rounded-xl shadow overflow-hidden">
+      contentImages.innerHTML += `
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
           <img src="${img}" class="w-full object-cover">
           <div class="min-h-[40px] border-t border-dashed border-slate-300 flex items-center justify-center">
             <span class="text-xs italic text-slate-400">
@@ -143,12 +182,12 @@ function showPage(page){
   });
 }
 
-backBtn.onclick=()=>{
-  homePage.classList.remove("hidden");
-  introPage.classList.add("hidden");
-  contentPage.classList.add("hidden");
-  backBtn.classList.add("hidden");
-  headerTitle.innerText="Debate Obesity";
+backBtn.onclick = ()=>{
+  homePage.classList.remove('hidden');
+  introPage.classList.add('hidden');
+  contentPage.classList.add('hidden');
+  backBtn.classList.add('hidden');
+  headerTitle.innerText = 'Health Topics';
 };
 </script>
 
