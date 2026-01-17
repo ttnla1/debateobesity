@@ -2,163 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Obesity – Environmental Causes</title>
-
-  <!-- Tailwind CDN -->
+  <title>Obesity Caused by Environment</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-slate-100 text-slate-800">
+<body class="bg-slate-50 text-slate-800">
 
-<div class="min-h-screen flex flex-col">
+<!-- HEADER -->
+<header class="bg-white shadow-sm p-4 text-center">
+  <h1 class="text-2xl font-bold">Obesity Topic.</h1>
+  <p class="text-slate-500">Group 3 – Debate | Project 6: Obesity - Environment</p>
+</header>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow px-6 py-4">
-    <h1 class="text-2xl font-bold text-center">Obesity Caused by Environment</h1>
-  </header>
+<!-- NAV -->
+<nav class="flex justify-center gap-4 mt-4 flex-wrap">
+  <button onclick="openPage('unhealthy-food')" class="navBtn">Unhealthy Food</button>
+  <button onclick="openPage('food-advertising')" class="navBtn">Food Advertisement</button>
+  <button onclick="openPage('mukbang')" class="navBtn">Mukbang</button>
+  <button onclick="openPage('insulin')" class="navBtn">Insulin</button>
+  <button onclick="openPage('stress')" class="navBtn">Stress</button>
+  <button onclick="openPage('obesogens')" class="navBtn">Obesogen</button>
+</nav>
 
-  <!-- MAIN -->
-  <main class="flex-1 max-w-5xl mx-auto w-full p-6">
+<!-- CONTENT -->
+<main class="max-w-5xl mx-auto p-6">
 
-    <!-- MENU -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-      <button onclick="showPage('unhealthy-food')" class="p-4 bg-red-100 rounded-xl hover:bg-red-200">Unhealthy Food</button>
-      <button onclick="showPage('food-advertising')" class="p-4 bg-amber-100 rounded-xl hover:bg-amber-200">Food Advertising</button>
-      <button onclick="showPage('mukbang')" class="p-4 bg-pink-100 rounded-xl hover:bg-pink-200">Mukbang</button>
-      <button onclick="showPage('insulin')" class="p-4 bg-emerald-100 rounded-xl hover:bg-emerald-200">Insulin</button>
-      <button onclick="showPage('stress')" class="p-4 bg-indigo-100 rounded-xl hover:bg-indigo-200">Stress</button>
-      <button onclick="showPage('obesogens')" class="p-4 bg-cyan-100 rounded-xl hover:bg-cyan-200">Obesogens</button>
+  <div id="contentPage" class="hidden">
+    <div class="text-center mb-6">
+      <div id="contentIcon" class="text-5xl mb-2"></div>
+      <h2 id="contentTitle" class="text-2xl font-bold"></h2>
+      <p id="contentSubtitle" class="text-slate-500"></p>
     </div>
 
-    <!-- CONTENT PAGE -->
-    <div id="contentPage" class="hidden">
-
-      <div class="text-center mb-6">
-        <div id="contentIcon"
-             class="w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 border-2">
-        </div>
-        <h2 id="contentTitle" class="text-2xl font-bold mb-2"></h2>
-        <p id="contentSubtitle" class="text-slate-500"></p>
-      </div>
-
-      <!-- IMAGE CONTAINER -->
-      <div id="contentBody"
-           class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-      </div>
-
+    <!-- IMAGE GRID -->
+    <div id="contentImages"
+         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     </div>
-  </main>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="bg-white/70 text-center py-3 text-sm text-slate-400 border-t">
-    © 2026 Obesity Topic
-  </footer>
+</main>
 
-</div>
+<!-- FOOTER -->
+<footer class="text-center text-slate-400 text-sm py-4">
+  © 2026 Obesity Topic
+</footer>
 
 <script>
-/* ================= PAGE DATA ================= */
 const pageData = {
   'unhealthy-food': {
     icon: '🍔',
-    gradient: 'from-red-100 to-orange-100',
-    borderColor: 'border-red-200',
     title: 'Unhealthy Food',
     subtitle: 'Processed and junk food',
-    <img src="unhealthy.jpg">
+    images: ['unhealthy.jpg']
   },
-
   'food-advertising': {
     icon: '📺',
-    gradient: 'from-amber-100 to-yellow-100',
-    borderColor: 'border-amber-200',
     title: 'Food Advertising',
     subtitle: 'Marketing and media impact',
-    <img src="advertisement1.jpg">
-    <img src="advertisement2.jpg">
-    <img src="advertisement3.jpg">
+    images: [
+      'advertisement1.jpg',
+      'advertisement2.jpg',
+      'advertisement3.jpg'
     ]
   },
-
   'mukbang': {
     icon: '🎬',
-    gradient: 'from-pink-100 to-rose-100',
-    borderColor: 'border-pink-200',
     title: 'Mukbang Videos',
     subtitle: 'Eating broadcast content',
-    <img src="mukbang1.jpg">
-    <img src="mukbang2.jpg">
-    ]
+    images: ['mukbang1.jpg', 'mukbang2.jpg']
   },
-
   'insulin': {
     icon: '💉',
-    gradient: 'from-emerald-100 to-green-100',
-    borderColor: 'border-emerald-200',
     title: 'Insulin',
     subtitle: 'Blood sugar regulation',
-    <img src="insulin.jpg">
+    images: ['insulin.jpg']
   },
-
   'stress': {
     icon: '😰',
-    gradient: 'from-indigo-100 to-purple-100',
-    borderColor: 'border-indigo-200',
     title: 'Stress',
     subtitle: 'Mental health and wellness',
-    <img src="stress1.jpg">
-    <img src="stress2.jpg">
-    <img src="stress3.jpg">
-    ]
+    images: ['stress1.jpg', 'stress2.jpg', 'stress3.jpg']
   },
-
   'obesogens': {
     icon: '⚗️',
-    gradient: 'from-cyan-100 to-blue-100',
-    borderColor: 'border-cyan-200',
     title: 'Obesogens',
     subtitle: 'Chemical compounds effects',
-    <img src="obesogen.jpg">
+    images: ['obesogen.jpg']
   }
 };
 
-/* ================= FUNCTIONS ================= */
-function showPage(key) {
-  const data = pageData[key];
+function openPage(page) {
+  const data = pageData[page];
   if (!data) return;
 
   document.getElementById('contentPage').classList.remove('hidden');
+  document.getElementById('contentIcon').innerText = data.icon;
+  document.getElementById('contentTitle').innerText = data.title;
+  document.getElementById('contentSubtitle').innerText = data.subtitle;
 
-  const iconBox = document.getElementById('contentIcon');
-  iconBox.textContent = data.icon;
-  iconBox.className =
-    `w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 border-2
-     ${data.borderColor} bg-gradient-to-br ${data.gradient}`;
+  const imgBox = document.getElementById('contentImages');
+  imgBox.innerHTML = '';
 
-  document.getElementById('contentTitle').textContent = data.title;
-  document.getElementById('contentSubtitle').textContent = data.subtitle;
-
-  renderImages(data.images);
-}
-
-function renderImages(images) {
-  const body = document.getElementById('contentBody');
-  body.innerHTML = '';
-
-  const grid = document.createElement('div');
-  grid.className = 'flex flex-wrap justify-center gap-4';
-
-  images.forEach(src => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.className = 'w-60 rounded-xl shadow-md';
-    grid.appendChild(img);
+  data.images.forEach(img => {
+    imgBox.innerHTML += `
+      <img src="${img}"
+           class="rounded-xl shadow-md w-full object-cover"
+           alt="">
+    `;
   });
-
-  body.appendChild(grid);
 }
 </script>
 
+<style>
+.navBtn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  transition: 0.2s;
+}
+.navBtn:hover {
+  background: #f1f5f9;
+}
+</style>
+
 </body>
 </html>
-
