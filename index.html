@@ -10,6 +10,7 @@
 
   <style>
     * { font-family: 'Be Vietnam Pro', sans-serif; }
+
     .nav-item { transition: all .25s ease; }
     .nav-item:active { transform: scale(.97); }
 
@@ -34,14 +35,21 @@
 
 <body class="h-full bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800">
 
+<!-- HEADER -->
 <header class="bg-white/80 backdrop-blur-md px-4 py-4 shadow-sm sticky top-0 z-50 border-b">
   <div class="flex items-center justify-between max-w-lg mx-auto">
-    <button id="backBtn" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">←</button>
-    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">Health Topics</h1>
+    <button id="backBtn"
+      class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">
+      ←
+    </button>
+    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">
+      Health Topics
+    </h1>
     <div class="w-10"></div>
   </div>
 </header>
 
+<!-- GLOBAL STATEMENT -->
 <div class="max-w-lg mx-auto px-4 py-3">
   <p class="text-xs text-slate-600 italic text-center bg-white/70 rounded-xl p-3 shadow-sm">
     We do not claim that the environment determines obesity in 100% of cases.
@@ -52,7 +60,7 @@
 
 <main class="flex-1 p-4 max-w-lg mx-auto w-full">
 
-<!-- HOME -->
+<!-- HOME (UI GIỐNG oknhatnaygio) -->
 <div id="homePage" class="page-transition">
   <div class="text-center mb-6">
     <p class="text-lg font-medium">Group 3 – Debate</p>
@@ -60,82 +68,163 @@
   </div>
 
   <nav class="space-y-3">
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="introduction">👥 Introduction</button>
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="unhealthy-food">🍔 Unhealthy Food</button>
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="food-advertising">📺 Food Advertising</button>
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="obesogens">⚗️ Obesogens</button>
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="stress">😰 Stress</button>
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="insulin">💉 Insulin</button>
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="references">📚 References</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="introduction">
+      <div class="w-14 h-14 bg-violet-100 rounded-xl flex items-center justify-center text-2xl">👥</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">Introduction</h3>
+        <p class="text-sm text-slate-500">Team members</p>
+      </div>›
+    </button>
+
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="unhealthy-food">
+      <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🍔</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">Unhealthy Food</h3>
+        <p class="text-sm text-slate-500">Price</p>
+      </div>›
+    </button>
+
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="food-advertising">
+      <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">📺</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">Food Advertising</h3>
+        <p class="text-sm text-slate-500">Marketing impact</p>
+      </div>›
+    </button>
+    
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="obesogens">
+      <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl">⚗️</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">Obesogens</h3>
+        <p class="text-sm text-slate-500">Daily exposure</p>
+      </div>›
+    </button>
+
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="stress">
+      <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl">😰</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">Stress</h3>
+        <p class="text-sm text-slate-500">Sweet things</p>
+      </div>›
+    </button>
+
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="insulin">
+      <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">💉</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">Insulin</h3>
+        <p class="text-sm text-slate-500">High level</p>
+      </div>›
+    </button>
   </nav>
 </div>
 
-<!-- INTRODUCTION -->
+<!-- INTRODUCTION (FULL TESTYH) -->
 <div id="introductionPage" class="hidden page-transition">
   <div class="text-center mb-6">
+    <div class="w-20 h-20 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 border-2">
+      👥
+    </div>
     <h2 class="text-2xl font-bold">Team Members</h2>
+    <p class="text-slate-500">Group 3 – Debate</p>
   </div>
+
   <div class="space-y-3">
-    <div class="member-card bg-white p-4 rounded-xl shadow">Trịnh Thị Ngọc Linh – Team Leader</div>
-    <div class="member-card bg-white p-4 rounded-xl shadow">Lê Nguyễn Thảo My</div>
-    <div class="member-card bg-white p-4 rounded-xl shadow">Nguyễn Tiểu Long</div>
-    <div class="member-card bg-white p-4 rounded-xl shadow">Nguyễn Minh Quân</div>
-    <div class="member-card bg-white p-4 rounded-xl shadow">Nguyễn Minh Khang</div>
+      <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">  
+      <div class="w-12 h-12 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full flex items-center justify-center">👩‍🎓</div>
+      <div>
+        <h3 class="font-semibold text-lg">Trịnh Thị Ngọc Linh</h3>
+        <p class="text-amber-600 text-sm font-medium">Team Leader</p>
+      </div>
+    </div>
+
+    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
+      <div class="w-12 h-12 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center">👩‍🎓</div>
+      <div><h3 class="font-semibold text-lg">Lê Nguyễn Thảo My</h3><p class="text-sm text-slate-500">Team Member</p></div>
+    </div>
+
+    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
+      <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">👨‍🎓</div>
+      <div><h3 class="font-semibold text-lg">Nguyễn Tiểu Long</h3><p class="text-sm text-slate-500">Team Member</p></div>
+    </div>
+
+    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
+      <div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full flex items-center justify-center">👨‍🎓</div>
+      <div><h3 class="font-semibold text-lg">Nguyễn Minh Quân</h3><p class="text-sm text-slate-500">Team Member</p></div>
+    </div>
+
+    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
+      <div class="w-12 h-12 bg-gradient-to-r from-violet-400 to-purple-400 rounded-full flex items-center justify-center">👨‍🎓</div>
+      <div><h3 class="font-semibold text-lg">Nguyễn Minh Khang</h3><p class="text-sm text-slate-500">Team Member</p></div>
+    </div>
   </div>
 </div>
 
-<!-- CONTENT -->
+<!-- CONTENT (CHỨC NĂNG GIỐNG SAP) -->
 <div id="contentPage" class="hidden page-transition">
-  <h2 id="contentTitle" class="text-2xl font-bold text-center mb-4"></h2>
-  <div id="contentImages" class="grid gap-4"></div>
+  <div class="text-center mb-6">
+    <div id="contentIcon" class="text-5xl mb-2"></div>
+    <h2 id="contentTitle" class="text-2xl font-bold"></h2>
+    <p id="contentSubtitle" class="text-slate-500"></p>
+  </div>
+  <div id="contentImages" class="grid grid-cols-1 gap-4"></div>
 </div>
 
 </main>
 
 <script>
 const pageData = {
-  "unhealthy-food":{
-    title:"Unhealthy Food",
-    images:["unhealthy.jpg","unhealthy1.jpg"],
-    notes:[
+  "unhealthy-food": {
+    icon: "🍔",
+    title: "Unhealthy Food",
+    subtitle: "Price",
+    images: ["unhealthy.jpg", "unhealthy1.jpg"],
+    notes: [
       "High cost of vegetables as a barrier to healthy eating.",
-      "High cost of vegetables in Korea."
+      "High cost of vegetables as a barrier to healthy eating in Korea."
     ]
   },
-  "food-advertising":{
-    title:"Food Advertising",
-    images:["advertisement1.jpg","advertisement2.jpg","advertisement3.jpg"],
-    notes:[
-      "Workshop for children",
-      "Children are main target",
-      "McDonald's family advertising"
+
+  "food-advertising": {
+    icon: "📺",
+    title: "Food Advertising",
+    subtitle: "Media impact",
+    images: ["advertisement1.jpg", "advertisement2.jpg", "advertisement3.jpg"],
+    notes: [
+      "Organizing a workshop for children",
+      "Children are the main target of advertising",
+      "Advertising images of families eating at McDonald’s"
     ]
   },
-  "stress":{
-    title:"Stress",
-    images:["stress1.jpg","stress2.jpg","stress3.jpg"],
-    notes:[
-      "Students eat sweets when stressed",
-      "Low physical activity",
-      "Survey in Ho Chi Minh City"
+
+  "stress": {
+    icon: "😰",
+    title: "Stress",
+    subtitle: "Sweet things",
+    images: ["stress1.jpg", "stress2.jpg", "stress3.jpg"],
+    notes: [
+      "Most students eat sweet foods when feeling stressed.",
+      "Many students have low levels of physical activity.",
+      "Survey data from high schools in Ho Chi Minh City."
     ]
   },
-  "insulin":{
-    title:"Insulin",
-    images:["insulin.jpg"],
-    notes:["High insulin increases fat storage"]
+
+  "insulin": {
+    icon: "💉",
+    title: "Insulin",
+    subtitle: "High level",
+    images: ["insulin.jpg"],
+    notes: [
+      "High insulin levels are associated with increased fat storage."
+    ]
   },
-  "obesogens":{
-    title:"Obesogens",
-    images:["obesogen.jpg"],
-    notes:["Daily exposure disrupts metabolism"]
-  },
-  "references":{
-    title:"References",
-    links:[
-      "https://vtv.vn/kinh-te/lam-phat-gia-rau-cu-qua-tai-han-quoc-20240313065501123.htm",
-      "https://link.springer.com/article/10.1007/s40519-025-01756-x",
-      "https://file.medinet.gov.vn/Data/soytehcm/bvbinhthanh/Attachments/2023_1/bs_kieu-_nckh_tcbp_131202310.pdf"
+
+  "obesogens": {
+    icon: "⚗️",
+    title: "Obesogens",
+    subtitle: "Daily exposure",
+    images: ["obesogen.jpg"],
+    notes: [
+      "Daily exposure to obesogens can disrupt metabolism."
     ]
   }
 };
@@ -149,37 +238,37 @@ document.querySelectorAll(".nav-item").forEach(b=>{
   b.onclick=()=>showPage(b.dataset.page);
 });
 
-function showPage(p){
+function showPage(page){
   homePage.classList.add("hidden");
   introPage.classList.add("hidden");
   contentPage.classList.add("hidden");
   backBtn.classList.remove("hidden");
 
-  if(p==="introduction"){
+  if(page==="introduction"){
     introPage.classList.remove("hidden");
     headerTitle.innerText="Introduction";
     return;
   }
 
-  const d=pageData[p];
+  const d=pageData[page];
+  if(!d) return;
+
   contentPage.classList.remove("hidden");
   headerTitle.innerText=d.title;
+  contentIcon.innerText=d.icon;
   contentTitle.innerText=d.title;
+  contentSubtitle.innerText=d.subtitle;
+
   contentImages.innerHTML="";
-
-  if(d.images){
-    d.images.forEach((img,i)=>{
-      contentImages.innerHTML+=`
+  d.images.forEach((img,index)=>{
+    contentImages.innerHTML+=`
       <div class="bg-white rounded-xl shadow overflow-hidden">
-        <img src="${img}">
-        <p class="text-xs italic p-2 text-center">${d.notes[i]}</p>
+        <img src="${img}" class="w-full">
+        <div class="border-t text-xs italic text-slate-400 p-2 text-center">
+          ${d.notes[index]}
+        </div>
       </div>`;
-    });
-  }
-
-  if(d.links){
-    contentImages.innerHTML=d.links.map(l=>`<a href="${l}" target="_blank" class="block bg-white p-3 rounded-xl shadow text-blue-600">${l}</a>`).join("");
-  }
+  });
 }
 
 backBtn.onclick=()=>{
@@ -193,3 +282,4 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
+
