@@ -145,7 +145,7 @@
     <h2 id="contentTitle" class="text-2xl font-bold"></h2>
     <p id="contentSubtitle" class="text-slate-500"></p>
   </div>
-  <div id="contentImages" class="grid grid-cols-1 gap-4"></div>
+  <div id="contentBody" class="grid grid-cols-1 gap-4"></div>
 </div>
 
 </main>
@@ -158,39 +158,37 @@ const pageData = {
     subtitle: "Sources & materials",
     type: "links",
     sections: [
-      { title: "1. Unhealthy Food", links: [
+      { title: "Unhealthy Food", links: [
         "https://vtv.vn/kinh-te/lam-phat-gia-rau-cu-qua-tai-han-quoc-20240313065501123.htm",
         "https://bnews.vn/dien-bien-thoi-tiet-khien-gia-rau-cu-o-nhat-ban-tang-manh/361194.html"
       ]},
-      { title: "2. Food Advertisement", links: [
+      { title: "Food Advertisement", links: [
         "https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_c%C3%A1o_th%E1%BB%A9c_%C4%83n_nhanh"
       ]},
-      { title: "3. Mukbang Videos", links: [
+      { title: "Mukbang", links: [
         "https://link.springer.com/article/10.1007/s40519-025-01756-x",
         "https://link.springer.com/article/10.1186/s41043-024-00552-0"
       ]},
-      { title: "4. Obesogens", links: [
-        "https://dantri.com.vn/suc-khoe/nhung-loai-chat-gay-tang-can-beo-phi-1328412273.htm",
-        "https://infraredsauna.com/blog/defining-obesogens-the-chemicals-impact-presence-in-the-household/"
+      { title: "Obesogens", links: [
+        "https://dantri.com.vn/suc-khoe/nhung-loai-chat-gay-tang-can-beo-phi-1328412273.htm"
       ]},
-      { title: "5. Stress", links: [
-        "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2013.00130/full",
-        "https://tuoitre.vn/thua-can-do-thich-an-ngot-khi-cang-thang-stress-2023102716541355.html"
+      { title: "Stress", links: [
+        "https://www.frontiersin.org/articles/10.3389/fnins.2013.00130/full"
       ]},
-      { title: "6. Insulin", links: [
+      { title: "Insulin", links: [
         "https://file.medinet.gov.vn/Data/soytehcm/bvbinhthanh/Attachments/2023_1/bs_kieu-_nckh_tcbp_131202310.pdf"
       ]}
     ]
   }
 };
 
-const homePage=document.getElementById("homePage");
-const introPage=document.getElementById("introductionPage");
-const contentPage=document.getElementById("contentPage");
-const backBtn=document.getElementById("backBtn");
+const homePage = document.getElementById("homePage");
+const introPage = document.getElementById("introductionPage");
+const contentPage = document.getElementById("contentPage");
+const backBtn = document.getElementById("backBtn");
 
-document.querySelectorAll(".nav-item").forEach(b=>{
-  b.onclick=()=>showPage(b.dataset.page);
+document.querySelectorAll(".nav-item").forEach(btn=>{
+  btn.onclick=()=>showPage(btn.dataset.page);
 });
 
 function showPage(page){
@@ -199,7 +197,13 @@ function showPage(page){
   contentPage.classList.add("hidden");
   backBtn.classList.remove("hidden");
 
-  const d=pageData[page];
+  if(page==="introduction"){
+    introPage.classList.remove("hidden");
+    headerTitle.innerText="Introduction";
+    return;
+  }
+
+  const d = pageData[page];
   if(!d) return;
 
   contentPage.classList.remove("hidden");
@@ -208,18 +212,16 @@ function showPage(page){
   contentTitle.innerText=d.title;
   contentSubtitle.innerText=d.subtitle;
 
-  contentImages.innerHTML="";
-  if(d.type==="links"){
-    d.sections.forEach(s=>{
-      contentImages.innerHTML+=`
+  contentBody.innerHTML="";
+  d.sections.forEach(sec=>{
+    contentBody.innerHTML+=`
       <div class="bg-white rounded-2xl shadow p-4">
-        <h3 class="font-semibold mb-2">${s.title}</h3>
+        <h3 class="font-semibold mb-2">${sec.title}</h3>
         <ul class="list-disc list-inside text-sm text-blue-600 break-all">
-          ${s.links.map(l=>`<li><a href="${l}" target="_blank" class="hover:underline">${l}</a></li>`).join("")}
+          ${sec.links.map(l=>`<li><a href="${l}" target="_blank" class="hover:underline">${l}</a></li>`).join("")}
         </ul>
       </div>`;
-    });
-  }
+  });
 }
 
 backBtn.onclick=()=>{
