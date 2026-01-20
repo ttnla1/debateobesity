@@ -343,6 +343,90 @@ backBtn.onclick=()=>{
 </script>
 
 </body>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const headerTitle = document.getElementById("headerTitle");
+  const homePage = document.getElementById("homePage");
+  const introPage = document.getElementById("introductionPage");
+  const contentPage = document.getElementById("contentPage");
+  const backBtn = document.getElementById("backBtn");
+
+  const contentIcon = document.getElementById("contentIcon");
+  const contentTitle = document.getElementById("contentTitle");
+  const contentSubtitle = document.getElementById("contentSubtitle");
+  const contentImages = document.getElementById("contentImages");
+
+  document.querySelectorAll(".nav-item").forEach(item=>{
+    item.addEventListener("click",()=>{
+      showPage(item.dataset.page);
+    });
+  });
+
+  backBtn.addEventListener("click", ()=>{
+    homePage.classList.remove("hidden");
+    introPage.classList.add("hidden");
+    contentPage.classList.add("hidden");
+    backBtn.classList.add("hidden");
+    headerTitle.innerText="Health Topics";
+  });
+
+});
+
+function showPage(page){
+  homePage.classList.add("hidden");
+  introPage.classList.add("hidden");
+  contentPage.classList.add("hidden");
+  backBtn.classList.remove("hidden");
+
+  if(page==="introduction"){
+    introPage.classList.remove("hidden");
+    headerTitle.innerText="Introduction";
+    return;
+  }
+
+  if(page==="references"){
+    const d = pageData.references;
+
+    contentPage.classList.remove("hidden");
+    headerTitle.innerText=d.title;
+    contentIcon.innerText=d.icon;
+    contentTitle.innerText=d.title;
+    contentSubtitle.innerText=d.subtitle;
+
+    contentImages.innerHTML="";
+    d.sections.forEach(sec=>{
+      contentImages.innerHTML+=`
+        <div class="bg-white rounded-xl p-4 shadow">
+          <h3 class="font-semibold mb-2">${sec.title}</h3>
+          ${sec.links.map(l=>`
+            <a href="${l}" target="_blank"
+              class="block text-blue-600 text-sm break-all">${l}</a>
+          `).join("")}
+        </div>`;
+    });
+    return;
+  }
+
+  const d = pageData[page];
+  if(!d) return;
+
+  contentPage.classList.remove("hidden");
+  headerTitle.innerText=d.title;
+  contentIcon.innerText=d.icon;
+  contentTitle.innerText=d.title;
+  contentSubtitle.innerText=d.subtitle;
+
+  contentImages.innerHTML="";
+  d.images.forEach(img=>{
+    contentImages.innerHTML+=`
+      <img src="${img}" class="rounded-xl shadow">
+    `;
+  });
+}
+</script>
+
 </html>
+
 
 
