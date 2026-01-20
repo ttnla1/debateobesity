@@ -10,16 +10,13 @@
 
   <style>
     * { font-family: 'Be Vietnam Pro', sans-serif; }
-
     .nav-item { transition: all .25s ease; }
     .nav-item:active { transform: scale(.97); }
-
     .page-transition { animation: fadeIn .3s ease; }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     .member-card { animation: slideIn .4s ease forwards; opacity: 0; }
     @keyframes slideIn {
       from { opacity: 0; transform: translateX(-20px); }
@@ -38,18 +35,13 @@
 <!-- HEADER -->
 <header class="bg-white/80 backdrop-blur-md px-4 py-4 shadow-sm sticky top-0 z-50 border-b">
   <div class="flex items-center justify-between max-w-lg mx-auto">
-    <button id="backBtn"
-      class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center hidden">
-      ←
-    </button>
-    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">
-      Health Topics
-    </h1>
+    <button id="backBtn" class="w-10 h-10 rounded-full bg-slate-100 hidden">←</button>
+    <h1 id="headerTitle" class="text-xl font-bold flex-1 text-center">Health Topics</h1>
     <div class="w-10"></div>
   </div>
 </header>
 
-<!-- GLOBAL STATEMENT -->
+<!-- STATEMENT -->
 <div class="max-w-lg mx-auto px-4 py-3">
   <p class="text-xs text-slate-600 italic text-center bg-white/70 rounded-xl p-3 shadow-sm">
     We do not claim that the environment determines obesity in 100% of cases.
@@ -60,7 +52,7 @@
 
 <main class="flex-1 p-4 max-w-lg mx-auto w-full">
 
-<!-- HOME (UI GIỐNG oknhatnaygio) -->
+<!-- HOME -->
 <div id="homePage" class="page-transition">
   <div class="text-center mb-6">
     <p class="text-lg font-medium">Group 3 – Debate</p>
@@ -76,208 +68,65 @@
       </div>›
     </button>
 
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="unhealthy-food">
-      <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-2xl">🍔</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Unhealthy Food</h3>
-        <p class="text-sm text-slate-500">Price</p>
-      </div>›
-    </button>
-
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="food-advertising">
-      <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-2xl">📺</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Food Advertising</h3>
-        <p class="text-sm text-slate-500">Marketing impact</p>
-      </div>›
-    </button>
-    
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="obesogens">
-      <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center text-2xl">⚗️</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Obesogens</h3>
-        <p class="text-sm text-slate-500">Daily exposure</p>
-      </div>›
-    </button>
-
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="stress">
-      <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl">😰</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Stress</h3>
-        <p class="text-sm text-slate-500">Sweet things</p>
-      </div>›
-    </button>
-
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="insulin">
-      <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">💉</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">Insulin</h3>
-        <p class="text-sm text-slate-500">High level</p>
-      </div>›
-    </button>
-  </nav>
-</div>
-  <!-- REFERENCES -->
-    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="references">
-      <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center text-2xl">📚</div>
-      <div class="flex-1 text-left">
-        <h3 class="font-semibold text-lg">References</h3>
-        <p class="text-sm text-slate-500">Sources & materials</p>
-      </div>›
-    </button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="unhealthy-food">🍔 Unhealthy Food</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="food-advertising">📺 Food Advertising</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="obesogens">⚗️ Obesogens</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="stress">😰 Stress</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="insulin">💉 Insulin</button>
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="references">📚 References</button>
   </nav>
 </div>
 
-<!-- INTRODUCTION (FULL TESTYH) -->
+<!-- INTRO -->
 <div id="introductionPage" class="hidden page-transition">
-  <div class="text-center mb-6">
-    <div class="w-20 h-20 bg-gradient-to-r from-violet-100 to-purple-100 rounded-full flex items-center justify-center text-4xl mx-auto mb-4 border-2">
-      👥
-    </div>
-    <h2 class="text-2xl font-bold">Team Members</h2>
-    <p class="text-slate-500">Group 3 – Debate</p>
-  </div>
-
+  <h2 class="text-2xl font-bold text-center mb-4">Team Members</h2>
   <div class="space-y-3">
-      <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">  
-      <div class="w-12 h-12 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full flex items-center justify-center">👩‍🎓</div>
-      <div>
-        <h3 class="font-semibold text-lg">Trịnh Thị Ngọc Linh</h3>
-        <p class="text-amber-600 text-sm font-medium">Team Leader</p>
-      </div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center">👩‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Lê Nguyễn Thảo My</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center">👨‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Nguyễn Tiểu Long</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full flex items-center justify-center">👨‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Nguyễn Minh Quân</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
-
-    <div class="member-card bg-white border rounded-2xl p-4 flex gap-4 shadow-sm">
-      <div class="w-12 h-12 bg-gradient-to-r from-violet-400 to-purple-400 rounded-full flex items-center justify-center">👨‍🎓</div>
-      <div><h3 class="font-semibold text-lg">Nguyễn Minh Khang</h3><p class="text-sm text-slate-500">Team Member</p></div>
-    </div>
+    <div class="member-card bg-white p-4 rounded-xl shadow">Trịnh Thị Ngọc Linh – Leader</div>
+    <div class="member-card bg-white p-4 rounded-xl shadow">Lê Nguyễn Thảo My</div>
+    <div class="member-card bg-white p-4 rounded-xl shadow">Nguyễn Tiểu Long</div>
+    <div class="member-card bg-white p-4 rounded-xl shadow">Nguyễn Minh Quân</div>
+    <div class="member-card bg-white p-4 rounded-xl shadow">Nguyễn Minh Khang</div>
   </div>
 </div>
 
-<!-- CONTENT (CHỨC NĂNG GIỐNG SAP) -->
+<!-- CONTENT -->
 <div id="contentPage" class="hidden page-transition">
-  <div class="text-center mb-6">
-    <div id="contentIcon" class="text-5xl mb-2"></div>
+  <div class="text-center mb-4">
+    <div id="contentIcon" class="text-5xl"></div>
     <h2 id="contentTitle" class="text-2xl font-bold"></h2>
     <p id="contentSubtitle" class="text-slate-500"></p>
   </div>
-  <div id="contentImages" class="grid grid-cols-1 gap-4"></div>
+  <div id="contentImages" class="space-y-4"></div>
 </div>
 
 </main>
 
-  <script>
-const pageData = {
-  "references": {
-    icon: "📚",
-    title: "References",
-    subtitle: "Sources & materials",
-    type: "links",
-    sections: [
-      { title: "1. Unhealthy Food", links: [
-        "https://vtv.vn/kinh-te/lam-phat-gia-rau-cu-qua-tai-han-quoc-20240313065501123.htm",
-        "https://bnews.vn/dien-bien-thoi-tiet-khien-gia-rau-cu-o-nhat-ban-tang-manh/361194.html"
-      ]},
-      { title: "2. Food Advertisement", links: [
-        "https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_c%C3%A1o_th%E1%BB%A9c_%C4%83n_nhanh"
-      ]},
-      { title: "3. Mukbang Videos", links: [
-        "https://link.springer.com/article/10.1007/s40519-025-01756-x",
-        "https://link.springer.com/article/10.1186/s41043-024-00552-0"
-      ]},
-      { title: "4. Obesogens", links: [
-        "https://dantri.com.vn/suc-khoe/nhung-loai-chat-gay-tang-can-beo-phi-1328412273.htm",
-        "https://infraredsauna.com/blog/defining-obesogens-the-chemicals-impact-presence-in-the-household/"
-      ]},
-      { title: "5. Stress", links: [
-        "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2013.00130/full",
-        "https://tuoitre.vn/thua-can-do-thich-an-ngot-khi-cang-thang-stress-2023102716541355.html"
-      ]},
-      { title: "6. Insulin", links: [
-        "https://file.medinet.gov.vn/Data/soytehcm/bvbinhthanh/Attachments/2023_1/bs_kieu-_nckh_tcbp_131202310.pdf"
-      ]}
-    ]
-  }
-};
-
-
 <script>
+const headerTitle = document.getElementById("headerTitle");
+const homePage = document.getElementById("homePage");
+const introPage = document.getElementById("introductionPage");
+const contentPage = document.getElementById("contentPage");
+const contentIcon = document.getElementById("contentIcon");
+const contentTitle = document.getElementById("contentTitle");
+const contentSubtitle = document.getElementById("contentSubtitle");
+const contentImages = document.getElementById("contentImages");
+const backBtn = document.getElementById("backBtn");
+
 const pageData = {
-  "unhealthy-food": {
-    icon: "🍔",
-    title: "Unhealthy Food",
-    subtitle: "Price",
-    images: ["unhealthy.jpg", "unhealthy1.jpg"],
-    notes: [
-      "High cost of vegetables as a barrier to healthy eating.",
-      "High cost of vegetables as a barrier to healthy eating in Korea."
-    ]
-  },
-
-  "food-advertising": {
-    icon: "📺",
-    title: "Food Advertising",
-    subtitle: "Media impact",
-    images: ["advertisement1.jpg", "advertisement2.jpg", "advertisement3.jpg"],
-    notes: [
-      "Organizing a workshop for children",
-      "Children are the main target of advertising",
-      "Advertising images of families eating at McDonald’s"
-    ]
-  },
-
-  "stress": {
-    icon: "😰",
-    title: "Stress",
-    subtitle: "Sweet things",
-    images: ["stress1.jpg", "stress2.jpg", "stress3.jpg"],
-    notes: [
-      "Most students eat sweet foods when feeling stressed.",
-      "Many students have low levels of physical activity.",
-      "Survey data from high schools in Ho Chi Minh City."
-    ]
-  },
-
-  "insulin": {
-    icon: "💉",
-    title: "Insulin",
-    subtitle: "High level",
-    images: ["insulin.jpg"],
-    notes: [
-      "High insulin levels are associated with increased fat storage."
-    ]
-  },
-
-  "obesogens": {
-    icon: "⚗️",
-    title: "Obesogens",
-    subtitle: "Daily exposure",
-    images: ["obesogen.jpg"],
-    notes: [
-      "Daily exposure to obesogens can disrupt metabolism."
+  "unhealthy-food": { icon:"🍔", title:"Unhealthy Food", subtitle:"Price", images:["unhealthy.jpg"], notes:["High cost of vegetables."] },
+  "food-advertising": { icon:"📺", title:"Food Advertising", subtitle:"Media impact", images:["advertisement1.jpg"], notes:["Children targeted."] },
+  "stress": { icon:"😰", title:"Stress", subtitle:"Sweet things", images:["stress1.jpg"], notes:["Stress increases sugar intake."] },
+  "insulin": { icon:"💉", title:"Insulin", subtitle:"High level", images:["insulin.jpg"], notes:["Insulin increases fat storage."] },
+  "obesogens": { icon:"⚗️", title:"Obesogens", subtitle:"Daily exposure", images:["obesogen.jpg"], notes:["Disrupt metabolism."] },
+  "references": {
+    icon:"📚", title:"References", subtitle:"Sources",
+    sections:[
+      {title:"Unhealthy Food", links:["https://vtv.vn","https://bnews.vn"]},
+      {title:"Food Advertising", links:["https://vi.wikipedia.org"]},
+      {title:"Mukbang", links:["https://link.springer.com"]}
     ]
   }
 };
-
-const homePage=document.getElementById("homePage");
-const introPage=document.getElementById("introductionPage");
-const contentPage=document.getElementById("contentPage");
-const backBtn=document.getElementById("backBtn");
 
 document.querySelectorAll(".nav-item").forEach(b=>{
   b.onclick=()=>showPage(b.dataset.page);
@@ -295,7 +144,7 @@ function showPage(page){
     return;
   }
 
-  const d=pageData[page];
+  const d = pageData[page];
   if(!d) return;
 
   contentPage.classList.remove("hidden");
@@ -303,16 +152,17 @@ function showPage(page){
   contentIcon.innerText=d.icon;
   contentTitle.innerText=d.title;
   contentSubtitle.innerText=d.subtitle;
-
   contentImages.innerHTML="";
-  d.images.forEach((img,index)=>{
-    contentImages.innerHTML+=`
-      <div class="bg-white rounded-xl shadow overflow-hidden">
-        <img src="${img}" class="w-full">
-        <div class="border-t text-xs italic text-slate-400 p-2 text-center">
-          ${d.notes[index]}
-        </div>
-      </div>`;
+
+  if(d.sections){
+    d.sections.forEach(s=>{
+      contentImages.innerHTML+=`<div class="bg-white p-4 rounded-xl shadow"><h3 class="font-semibold">${s.title}</h3>${s.links.map(l=>`<a href="${l}" class="block text-blue-600 text-sm">${l}</a>`).join("")}</div>`;
+    });
+    return;
+  }
+
+  d.images.forEach((img,i)=>{
+    contentImages.innerHTML+=`<div class="bg-white rounded-xl shadow"><img src="${img}" class="w-full"><p class="text-xs p-2 italic">${d.notes[i]}</p></div>`;
   });
 }
 
@@ -327,5 +177,3 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
-
-
