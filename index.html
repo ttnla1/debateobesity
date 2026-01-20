@@ -117,6 +117,16 @@
     </button>
   </nav>
 </div>
+  <!-- REFERENCES -->
+    <button class="nav-item w-full bg-white rounded-2xl p-4 flex gap-4 shadow-md border" data-page="references">
+      <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center text-2xl">📚</div>
+      <div class="flex-1 text-left">
+        <h3 class="font-semibold text-lg">References</h3>
+        <p class="text-sm text-slate-500">Sources & materials</p>
+      </div>›
+    </button>
+  </nav>
+</div>
 
 <!-- INTRODUCTION (FULL TESTYH) -->
 <div id="introductionPage" class="hidden page-transition">
@@ -170,6 +180,41 @@
 </div>
 
 </main>
+
+  <script>
+const pageData = {
+  "references": {
+    icon: "📚",
+    title: "References",
+    subtitle: "Sources & materials",
+    type: "links",
+    sections: [
+      { title: "1. Unhealthy Food", links: [
+        "https://vtv.vn/kinh-te/lam-phat-gia-rau-cu-qua-tai-han-quoc-20240313065501123.htm",
+        "https://bnews.vn/dien-bien-thoi-tiet-khien-gia-rau-cu-o-nhat-ban-tang-manh/361194.html"
+      ]},
+      { title: "2. Food Advertisement", links: [
+        "https://vi.wikipedia.org/wiki/Qu%E1%BA%A3ng_c%C3%A1o_th%E1%BB%A9c_%C4%83n_nhanh"
+      ]},
+      { title: "3. Mukbang Videos", links: [
+        "https://link.springer.com/article/10.1007/s40519-025-01756-x",
+        "https://link.springer.com/article/10.1186/s41043-024-00552-0"
+      ]},
+      { title: "4. Obesogens", links: [
+        "https://dantri.com.vn/suc-khoe/nhung-loai-chat-gay-tang-can-beo-phi-1328412273.htm",
+        "https://infraredsauna.com/blog/defining-obesogens-the-chemicals-impact-presence-in-the-household/"
+      ]},
+      { title: "5. Stress", links: [
+        "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2013.00130/full",
+        "https://tuoitre.vn/thua-can-do-thich-an-ngot-khi-cang-thang-stress-2023102716541355.html"
+      ]},
+      { title: "6. Insulin", links: [
+        "https://file.medinet.gov.vn/Data/soytehcm/bvbinhthanh/Attachments/2023_1/bs_kieu-_nckh_tcbp_131202310.pdf"
+      ]}
+    ]
+  }
+};
+
 
 <script>
 const pageData = {
@@ -282,4 +327,5 @@ backBtn.onclick=()=>{
 
 </body>
 </html>
+
 
